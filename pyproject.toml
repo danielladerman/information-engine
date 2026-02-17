@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "information-engine"
+version = "0.1.0"
+description = "On-demand business intelligence research tool powered by Tavily + Claude"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[project.scripts]
+info-engine = "information_engine.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["information_engine*"]

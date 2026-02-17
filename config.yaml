@@ -1,0 +1,56 @@
+# Information Engine Configuration
+
+# --- Research Settings ---
+research:
+  tavily_model: "mini"               # "mini" (fast, ~30s) for standard; "pro" auto-used for --deep
+  deep_follow_up_queries: 6          # Extra search queries in --deep mode
+  tavily_search_depth: "advanced"    # "basic" or "advanced"
+  max_results_per_query: 5           # 1-20 results per Tavily search
+  extract_chunks_per_source: 3       # Focused chunks per extracted URL
+  extract_score_threshold: 0.5       # Min relevance score to extract a URL
+
+# --- Business Context (for relevance scoring) ---
+business_context:
+  description: "AI transformation consulting for SMBs (5-100 employees)"
+  target_industries:
+    - "Professional Services"
+    - "E-commerce"
+    - "Local Services"
+    - "B2B SaaS"
+    - "Healthcare"
+    - "Legal"
+    - "Agencies"
+  scoring_note: "Score higher for insights directly applicable to selling and delivering AI consulting to small businesses"
+
+# --- Knowledge Domains (auto-categorization) ---
+domains:
+  - marketing
+  - growth
+  - psychology
+  - operations
+  - pricing
+  - voice
+  - industry
+  - sales
+  - leadership
+
+# --- Notion ---
+notion:
+  auto_create_db: true
+  knowledge_base_id: "ce5694d8-f692-4e9c-bd46-99ff0d9df84e"
+  parent_page_id: "309a28b0-7c4d-8144-bed0-f05ac5cec892"  # AI Transformation HQ
+  min_relevance_for_sync: 0.5
+
+# --- AI Models ---
+models:
+  synthesis: "claude-sonnet-4-5-20250929"
+  ask: "claude-sonnet-4-5-20250929"
+
+# --- Database ---
+database:
+  path: "information_engine.db"
+
+# --- Logging ---
+logging:
+  level: "INFO"
+  file: "logs/information_engine.log"
